@@ -7,7 +7,7 @@ data class Pokemon(
     val name: String,
     val types: List<PokemonType>
 ) {
-    val formattedName = name.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
+    val formattedName = name.replaceFirstChar { it.uppercase() }
 
     val formattedNumber = number.toString().padStart(3, '0')
 
