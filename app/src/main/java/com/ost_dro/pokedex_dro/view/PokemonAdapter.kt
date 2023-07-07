@@ -6,8 +6,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.ost_dro.pokedex_dro.R
 import com.ost_dro.pokedex_dro.domain.Pokemon
+import java.util.Locale
 
 class PokemonAdapter(
     private val items: List<Pokemon>
@@ -38,14 +40,25 @@ class PokemonAdapter(
             val tvType2 = findViewById<TextView>(R.id.tv_type2)
 
             // TODO: Load imag with Glide
+            item?.let{
+                Glide.with(itemView.context).load(it.imageUrl).into(ivPokemon)
+            }
 
-            tvNumber.text = "N° ${item.formatterdNumber}"
+            tvNumber.text = "N° ${item.formattedNumber}"
             tvName.text = item.name
-            tvType1.text = item.types[0].name
+            tvType1.text = item.types[0].name.replaceFirstChar {
+                if (it.isLowerCase()) it.titlecase(
+                    Locale.getDefault()
+                ) else it.toString()
+            }
 
             if (item.types.size > 1){
                 tvType2.visibility = View.VISIBLE
-                tvType2.text = item.types[1].name
+                tvType2.text = item.types[1].name.replaceFirstChar {
+                    if (it.isLowerCase()) it.titlecase(
+                        Locale.ROOT
+                    ) else it.toString()
+                }
             } else{
                 tvType2.visibility = View.GONE
             }

@@ -23,17 +23,17 @@
 
         <ImageView
             android:id="@+id/iv_pokemon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            android:background="@drawable/charmander"
             android:contentDescription="Pokemon Image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/rounded_background"/>
 
         <TextView
             android:id="@+id/tv_number"
@@ -70,10 +70,10 @@
                 android:id="@+id/tv_type1"
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
-                android:background="#fd7d24"
+                android:background="@drawable/rounded_background"
                 android:gravity="center_horizontal"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#212121"
                 android:textSize="12sp"
                 tools:text="Fire" />
 
@@ -83,10 +83,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
-                android:background="#fd7d24"
+                android:background="@drawable/rounded_background"
                 android:gravity="center_horizontal"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#212121"
                 android:textSize="12sp"
                 tools:text="Fire" />
 
